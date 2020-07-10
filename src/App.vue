@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div
-      class="container mx-auto grid grid-cols-none grid-flow-row-dense sm:grid-cols-2 xl:grid-cols-4 gap-5"
+      class="container mx-auto grid justify-center grid-cols-none sm:grid-cols-card-2 md:grid-cols-card-3 xl:grid-cols-card-4 gap-5"
     >
       <VendorCard v-for="vendor in vendors" :key="vendor.id" :vendor="vendor" />
     </div>
@@ -14,11 +14,11 @@ import VendorCard from "./components/VendorCard";
 export default {
   name: "App",
   components: {
-    VendorCard
+    VendorCard,
   },
   data() {
     return {
-      vendors: []
+      vendors: [],
     };
   },
   mounted() {
@@ -27,13 +27,13 @@ export default {
   methods: {
     fetchData() {
       fetch("https://my-json-server.typicode.com/rizuki96/jsontest/vendors")
-        .then(res => res.json())
-        .then(data => {
-          console.log(data);
+        .then((res) => res.json())
+        .then((data) => {
+          // console.log(data);
           this.vendors = data;
         });
-    }
-  }
+    },
+  },
 };
 </script>
 
