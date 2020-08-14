@@ -1,22 +1,21 @@
-/* eslint-disable vue/no-parsing-error */
 <template>
   <div
-    class="card container mx-auto bg-red-100 max-w-sm h-card w-card rounded-lg shadow-lg"
+    class="card container mx-auto bg-white max-w-sm h-card w-card rounded-lg shadow-lg"
   >
     <div class="container mx-auto p-6">
       <div class="flex flex-col items-center">
         <div
-          class="flex items-center justify-center w-28 h-28 rounded-full"
-          style="background-color: #D6F6F1;"
+          class="flex items-center justify-center w-28 h-28 rounded-full bg-secondary-50"
         >
-          <img class="w-24 h-24 rounded-full" :src="vendor.img" alt="pic" />
+          <a href="#">
+            <img class="w-24 h-24 rounded-full" :src="vendor.img" alt="pic" />
+          </a>
         </div>
         <div class="mt-5">
           <h1
-            class="font-monts font-semibold text-lg truncate tracking-tight"
-            style="color: #00EBC7;"
+            class="font-monts font-semibold text-lg truncate tracking-tight text-secondary-500"
           >
-            {{ vendor.title }}
+            <a href="#">{{ vendor.title }}</a>
           </h1>
           <ul
             class="flex items-center justify-center font-monts font-normal text-xs mb-3"
@@ -43,14 +42,13 @@
           <div class="mb-4 font-monts font-light text-xs">
             <a href="#">{{ vendor.review }} reviews</a>
           </div>
-          <div>
+          <a href="#">
             <button
-              class="font-monts font-medium text-sm w-16 h-8 rounded-md"
-              style="background-color: #00EBC7;"
+              class="font-monts font-medium text-sm w-16 h-8 rounded-md bg-secondary-500 hover:bg-secondary-600"
             >
-              <a href="#">{{ vendor.price }}</a>
+              {{ vendor.price }}
             </button>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -73,7 +71,6 @@ export default {
   data() {
     return {
       thumbsUp: "",
-      // rating: ""
     };
   },
   computed: {
